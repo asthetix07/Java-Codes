@@ -5,12 +5,12 @@ import java.util.Scanner;
 class Contact {
     String name;
     String phoneNumber;
-    String email;
+    String mail;
 
-    public Contact(String name, String phoneNumber, String email) {
+    public Contact(String name, String phoneNumber, String mail) {
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.email = email;
+        this.mail = mail;
     }
 }
 
@@ -23,14 +23,14 @@ class AddressBook {
 
     public void displayContacts() {
         for (Contact contact : contacts) {
-            System.out.println("Name: " + contact.name + ", Phone: " + contact.phoneNumber + ", Email: " + contact.email);
+            System.out.println("Name: " + contact.name + ", Phone: " + contact.phoneNumber + ", mail: " + contact.mail);
         }
     }
 
     public void searchContact(String searchTerm) {
         for (Contact contact : contacts) {
-            if (contact.name.contains(searchTerm)|| contact.phoneNumber.contains(searchTerm)||  contact.email.contains(searchTerm)) {
-                System.out.println("Name: " + contact.name + ", Phone: " + contact.phoneNumber + ", Email: " + contact.email);
+            if (contact.name.contains(searchTerm)|| contact.phoneNumber.contains(searchTerm)||  contact.mail.contains(searchTerm)) {
+                System.out.println("Name: " + contact.name + ", Phone: " + contact.phoneNumber + ", mail: " + contact.mail);
             }
         }
     }
@@ -55,9 +55,9 @@ public class AddressBookApp {
                     String name = scanner.next();
                     System.out.println("Enter phone number:");
                     String phoneNumber = scanner.next();
-                    System.out.println("Enter email:");
-                    String email = scanner.next();
-                    Contact newContact = new Contact(name, phoneNumber, email);
+                    System.out.println("Enter mail:");
+                    String mail = scanner.next();
+                    Contact newContact = new Contact(name, phoneNumber, mail);
                     addressBook.addContact(newContact);
                     break;
 
